@@ -87,27 +87,24 @@ img {
     border-bottom: 1px solid rgba(120, 84, 61, 0.15);
 }
 
-.brand {
+.topbar .brand {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--coffee);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 1.2;
-} 
-
-.brand-logo {
-    width: 10px !important;
-    height: 10px !important;
-    max-width: 10px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
 }
 
+.topbar .brand-logo {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
 .brand-light {
     color: var(--caramel);
 }
@@ -172,24 +169,23 @@ h1 span {
 }
 
 .hero-art {
-    min-width: 0;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    min-width: 0; /* Prevents flex items from overflowing container */
 }
 
 .hero-art .hero-image {
-    width: auto !important;
+    display: block;
+    width: 100% !important;
     height: auto !important;
-    max-width: 250px;
-    max-height: 250px;
-    object-fit: contain;
+    max-width: 320px !important;  /* Adjust this control size freely */
+    max-height: 320px !important;
+    object-fit: contain !important;
+    object-position: center;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
 }
-
 .hero-copy > p {
     max-width: 540px;
     margin-bottom: 24px;

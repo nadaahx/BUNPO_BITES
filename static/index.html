@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f0e5">
+
+    <title>Bunpo Bites ☕</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+<main class="container">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <a href="#" class="brand" id="home-link">
+            <span class="brand-icon">☕</span>
+            <span>BUNPO <span class="brand-light">BITES</span></span>
+        </a>
+
+        <div class="open-status">
+            <span class="status-dot"></span>
+            your cozy study corner
+        </div>
+    </header>
+
+
+    <!-- PAGE 1: WELCOME -->
+    <section class="app-page active" id="page-1">
+
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">✳ WELCOME TO YOUR LITTLE STUDY CAFÉ</span>
+
+                <h1>A little coffee,<br>a little <span>文法.</span></h1>
+
+                <p>
+                    Welcome to Bunpo Bites, your cozy corner for learning
+                    Japanese. Grab your imaginary latte and let's make
+                    grammar a little more fun, one conversation at a time.
+                </p>
+
+                <button class="primary-button start-button" data-go="2">
+                    Let's get brewing <span>♡</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <div class="hero-tags">
+                    <span>♡ learn at your pace</span>
+                    <span>✦ real-life Japanese</span>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="sun-circle"></div>
+                <span class="sparkle sparkle-one">✳</span>
+                <span class="sparkle sparkle-two">✧</span>
+                <span class="floating-heart">♡</span>
+
+                <div class="coffee-cup">
+                    <div class="steam steam-one"></div>
+                    <div class="steam steam-two"></div>
+
+                    <div class="coffee"><span>✿</span></div>
+
+                    <div class="cup-body">
+                        <span class="cup-face">˶ᵔ ᵕ ᵔ˶</span>
+                        <span class="cup-label">BUNPO BITES</span>
+                    </div>
+
+                    <div class="cup-handle"></div>
+                    <div class="cup-shadow"></div>
+                </div>
+
+                <div class="art-note">brewed with love & language ♡</div>
+            </div>
+        </section>
+
+        <section class="daily-note">
+            <span class="note-icon">📖</span>
+            <div>
+                <span class="note-heading">A tiny reminder for you</span>
+                <p>You're not behind. You're learning. That's enough. ♡</p>
+            </div>
+            <span class="note-decoration">✿</span>
+        </section>
+
+        <div class="welcome-extra">
+            <span class="eyebrow">YOUR DAILY DOSE OF JAPANESE</span>
+            <h2>Small bites, big progress.</h2>
+            <p>
+                No pressure, no perfection. Just you, your curiosity,
+                and a new little step towards fluency.
+            </p>
+
+            <div class="mini-perks">
+                <div>☕<span>Cozy practice</span></div>
+                <div>🌸<span>Useful grammar</span></div>
+                <div>💌<span>Gentle feedback</span></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PAGE 2: PRACTICE MENU -->
+    <section class="app-page" id="page-2">
+
+        <div class="page-heading">
+            <span class="eyebrow">✳ THE PRACTICE MENU</span>
+            <h1>What are we <span>brewing</span> today?</h1>
+            <p>
+                Pick a grammar ingredient and we'll turn it into a
+                real-life Japanese conversation.
+            </p>
+        </div>
+
+        <div class="menu-decoration">
+            <span>☕</span>
+            <div>
+                <strong>Today's special</strong>
+                <p>A fresh cup of Japanese practice</p>
+            </div>
+            <span class="menu-flower">✿</span>
+        </div>
+
+        <div class="input-card">
+            <div class="card-topline">
+                <span class="step-number">01</span>
+                <div>
+                    <h3>Choose your grammar ingredient</h3>
+                    <p>Anything you'd like to get a little more comfortable using.</p>
+                </div>
+            </div>
+
+            <label for="grammar">YOUR GRAMMAR OF THE DAY</label>
+
+            <textarea
+                id="grammar"
+                placeholder="e.g. ～てしまう, ～ようにする, ～わけではない..."
+            ></textarea>
+
+            <div class="input-hint">
+                <span>☕</span>
+                <span>Beginner or advanced — every grammar point has a place here.</span>
+            </div>
+
+            <button id="generate" class="primary-button">
+                <span>✧</span> Brew my situation
+                <span class="button-arrow">→</span>
+            </button>
+        </div>
+
+        <div class="menu-footer-note">
+            <span>🍪</span>
+            <p>One grammar point at a time. You've got this!</p>
+        </div>
+    </section>
+
+
+    <!-- PAGE 3: CONVERSATION -->
+    <section class="app-page" id="page-3">
+
+        <div class="page-heading">
+            <span class="eyebrow">✳ YOUR CONVERSATION CORNER</span>
+            <h1>Let's have a <span>little chat.</span></h1>
+            <p>
+                Imagine the scene, find your words, and give it a try.
+                There's no rush. ♡
+            </p>
+        </div>
+
+        <section id="practice" class="practice-card panel hidden">
+
+            <div class="conversation-header">
+                <div>
+                    <span class="eyebrow">YOUR LITTLE ROLEPLAY</span>
+                    <h2>A seat at the café</h2>
+                </div>
+                <span class="conversation-icon">💌</span>
+            </div>
+
+            <div class="scene-label">
+                <span>✿</span> THE SCENE
+            </div>
+
+            <div id="situation" class="situation japanese-output"></div>
+
+
+            <div class="reply-divider">
+                <span>✧</span>
+                <span>YOUR TURN, FRIEND</span>
+                <span>✧</span>
+            </div>
+
+            <label for="answer">YOUR REPLY IN JAPANESE</label>
+
+            <textarea
+                id="answer"
+                class="japanese-input"
+                placeholder="日本語で書いてみましょう…&#10;&#10;Take your time. There's no rush ♡"
+            ></textarea>
+
+            <div class="input-hint">
+                <span>✎</span>
+                <span>Try using the grammar point from today's menu!</span>
+            </div>
+
+            <button id="check" class="primary-button">
+                Check my Japanese <span>♡</span>
+                <span class="button-arrow">→</span>
+            </button>
+
+            <div id="feedback" class="feedback hidden"></div>
+
+            <button id="next" class="secondary-button">
+                <span>↻</span> Brew another situation
+            </button>
+
+        </section>
+
+        <div id="conversation-empty" class="empty-state">
+            <span class="empty-icon">☕</span>
+            <h2>Your table is waiting!</h2>
+            <p>
+                Head back to the practice menu and choose a grammar point.
+                Your next Japanese conversation will appear here.
+            </p>
+            <button class="primary-button" data-go="2">
+                Go to the practice menu <span>→</span>
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- THREE-PAGE NAVIGATION -->
+    <nav class="page-navigation" aria-label="Page navigation">
+
+        <button class="nav-arrow" id="prev-page" aria-label="Previous page">
+            ←
+        </button>
+
+        <button class="page-dot active" data-go="1" aria-label="Page 1: Welcome">
+            <span>01</span>
+        </button>
+
+        <span class="nav-line"></span>
+
+        <button class="page-dot" data-go="2" aria-label="Page 2: Practice menu">
+            <span>02</span>
+        </button>
+
+        <span class="nav-line"></span>
+
+        <button class="page-dot" data-go="3" aria-label="Page 3: Conversation">
+            <span>03</span>
+        </button>
+
+        <button class="nav-arrow" id="next-page" aria-label="Next page">
+            →
+        </button>
+
+        <span class="nav-caption" id="nav-caption">A warm welcome</span>
+    </nav>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-flower">✿</div>
+        <p>Bunpo Bites</p>
+        <span>小さな一歩、大きな成長。 Small bites, big progress.</span>
+        <div class="footer-bottom">MADE WITH ☕ AND A LITTLE BIT OF COURAGE</div>
+    </footer>
+
+</main>
+</body>
+</html>

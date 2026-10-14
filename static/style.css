@@ -158,17 +158,6 @@ h1 span {
     font-style: italic;
 }
 
-/* .hero-art .hero-image {
-    display: block;
-    width: 555px !important;
-    height: 555px !important;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-} */
-
 .hero-art {
     min-width: 0;
     width: 100%;
@@ -675,7 +664,7 @@ button {
 
     .hero-art {
         min-height: 235px;
-        border-radius: 20px;
+        
     }
 
     .coffee-cup {

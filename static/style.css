@@ -1,8 +1,3 @@
-
-/* =========================================
-   KOTOBA KISSATEN — A COZY JAPANESE CAFE
-   ========================================= */
-
 :root {
     --cream: #f7f0e5;
     --paper: #fffaf2;
@@ -19,7 +14,9 @@
     --shadow: 0 16px 45px rgba(81, 52, 32, 0.08);
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -41,8 +38,14 @@ body {
     line-height: 1.7;
 }
 
-/* Background decorations */
+/* Images & Media */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
+/* Background decorations */
 .ambient {
     position: fixed;
     z-index: -1;
@@ -68,17 +71,15 @@ body {
 }
 
 /* Main layout */
-
 .container {
     position: relative;
-    width: min(100% - 48px, 960px);
+    width: min(100% - 64px, 1200px);
     margin: 0 auto;
 }
 
-/* Navigation */
-
+/* Navigation & Brand */
 .topbar {
-    min-height: 90px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,13 +90,22 @@ body {
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: var(--coffee);
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
+    line-height: 1.2;
 } 
+
+.brand-logo {
+    width: 26px !important;
+    height: 26px !important;
+    max-width: 26px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 
 .brand-light {
     color: var(--caramel);
@@ -106,7 +116,7 @@ body {
     align-items: center;
     gap: 8px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .status-dot {
@@ -117,21 +127,20 @@ body {
     box-shadow: 0 0 0 4px rgba(120, 131, 106, 0.12);
 }
 
-/* Hero */
-
+/* Hero Section */
 .hero {
-    min-height: 360px;
+    min-height: 460px;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
-    gap: 25px;
+    gap: 45px;
     padding: 35px 0 25px;
 }
 
 .eyebrow {
     display: inline-block;
     color: var(--terracotta);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
 }
@@ -150,7 +159,7 @@ h2 {
 
 h1 {
     margin: 18px 0;
-    font-size: clamp(38px, 5.5vw, 61px);
+    font-size: clamp(48px, 5vw, 72px);
     line-height: 1.15;
     font-weight: 600;
     letter-spacing: -1.8px;
@@ -161,17 +170,6 @@ h1 span {
     font-style: italic;
 }
 
-/* .hero-art .hero-image {
-    display: block;
-    width: 555px !important;
-    height: 555px !important;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-} */
-
 .hero-art {
     min-width: 0;
     width: 100%;
@@ -181,7 +179,6 @@ h1 span {
 }
 
 .hero-art .hero-image {
-    display: block;
     width: 100% !important;
     height: auto !important;
     max-width: 460px;
@@ -193,10 +190,10 @@ h1 span {
 }
 
 .hero-copy > p {
-    max-width: 410px;
+    max-width: 540px;
     margin-bottom: 24px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.9;
 }
 
@@ -207,16 +204,15 @@ h1 span {
 }
 
 .hero-tags span {
-    padding: 6px 10px;
+    padding: 8px 13px;
     border: 1px solid var(--line);
     border-radius: 20px;
     background: rgba(255, 250, 242, 0.6);
     color: var(--mocha);
-    font-size: 10px;
+    font-size: 13px;
 }
 
 /* Gentle reminder */
-
 .daily-note {
     display: flex;
     align-items: center;
@@ -258,10 +254,9 @@ h1 span {
     font-size: 27px;
 }
 
-/* Practice section */
-
+/* Workspace & Practice Section */
 .workspace {
-    max-width: 730px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -276,7 +271,7 @@ h1 span {
 .section-heading h2,
 .conversation-header h2 {
     margin: 8px 0 0;
-    font-size: clamp(22px, 4vw, 29px);
+    font-size: 32px;
     line-height: 1.35;
 }
 
@@ -294,9 +289,9 @@ h1 span {
 
 .input-card,
 .practice-card {
-    padding: clamp(20px, 5vw, 34px);
+    padding: 38px;
     border: 1px solid #e9d9c7;
-    border-radius: 18px;
+    border-radius: 20px;
     background: var(--paper);
     box-shadow: var(--shadow);
 }
@@ -323,49 +318,54 @@ h1 span {
 
 .card-topline h3 {
     margin: 0 0 4px;
-    font-size: 15px;
+    font-size: 19px;
 }
 
 .card-topline p {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.7;
 }
 
-/* Labels and text fields */
-
+/* Form Controls & Inputs */
 label {
     display: block;
     margin: 18px 0 9px;
     color: var(--mocha);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
 }
 
-textarea {
+textarea,
+.japanese-input {
     display: block;
     width: 100%;
-    min-height: 115px;
-    padding: 15px 16px;
+    min-height: 150px;
+    padding: 18px;
     resize: vertical;
     border: 1px solid #e6d6c4;
     border-radius: 10px;
     outline: none;
     background: #fffdf9;
     color: var(--coffee);
-    font: inherit;
-    font-size: 14px;
-    line-height: 1.8;
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.02em;
     transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-textarea::placeholder {
+textarea::placeholder,
+.japanese-input::placeholder {
     color: #b6a493;
+    font-family: "Noto Serif JP", serif;
+    font-size: 15px;
 }
 
-textarea:focus {
+textarea:focus,
+.japanese-input:focus {
     border-color: var(--caramel);
     box-shadow: 0 0 0 4px rgba(183, 122, 80, 0.12);
 }
@@ -376,7 +376,7 @@ textarea:focus {
     gap: 8px;
     margin: 11px 0 20px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -385,7 +385,6 @@ textarea:focus {
 }
 
 /* Buttons */
-
 button {
     font: inherit;
 }
@@ -393,22 +392,19 @@ button {
 .primary-button {
     display: flex;
     width: 100%;
-    min-height: 52px;
+    min-height: 60px;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 13px 18px;
+    padding: 16px 22px;
     border: 1px solid var(--coffee);
     border-radius: 10px;
     background: var(--coffee);
     color: #fff8ee;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
-    transition:
-        background 180ms ease,
-        transform 180ms ease,
-        box-shadow 180ms ease;
+    transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .primary-button:hover:not(:disabled) {
@@ -441,13 +437,13 @@ button {
     display: block;
     width: 100%;
     margin-top: 15px;
-    padding: 12px 16px;
+    padding: 15px 18px;
     border: 1px solid var(--line);
     border-radius: 10px;
     background: transparent;
     color: var(--mocha);
     cursor: pointer;
-    font-size: 12px;
+    font-size: 15px;
     transition: background 180ms ease;
 }
 
@@ -455,8 +451,7 @@ button {
     background: #f3e8d9;
 }
 
-/* Conversation card */
-
+/* Conversation & Feedback Cards */
 .practice-card {
     margin-top: 28px;
     animation: appear 350ms ease both;
@@ -498,15 +493,17 @@ button {
 }
 
 .situation {
-    padding: 19px;
+    padding: 24px;
     border-left: 3px solid var(--caramel);
     border-radius: 0 10px 10px 0;
     background: #f5ecdf;
     color: var(--coffee);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-    line-height: 1.95;
-    font-size: 14px;
+    line-height: 2.2;
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    font-size: 19px;
+    letter-spacing: 0.025em;
 }
 
 .reply-divider {
@@ -529,29 +526,96 @@ button {
     background: var(--line);
 }
 
-.practice-card > label {
-    margin-top: 0;
-}
-
+/* Feedback Section Typography */
+#feedback,
 .feedback {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 2.1;
+    color: #493326;
+    padding: 30px;
     margin-top: 22px;
-    padding: 20px;
-    border: 1px solid #e2d3bd;
-    border-radius: 12px;
-    background: #f7efe3;
-    color: var(--coffee);
+    background: #fff8ed;
+    border: 1px solid #e8d4bc;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(73, 51, 38, 0.06);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-    line-height: 1.9;
-    font-size: 13px;
 }
 
-.feedback:not(:empty) {
+#feedback:not(:empty) {
     animation: appear 250ms ease both;
 }
 
-/* Optional furigana styling from your existing app */
+#feedback .japanese-text,
+#feedback .corrected-japanese,
+#feedback .example-japanese,
+.feedback .japanese-text,
+.feedback .corrected-japanese,
+.feedback .example-japanese {
+    display: block;
+    margin: 12px 0;
+    padding: 20px;
+    background: #f3e7d7;
+    border-left: 4px solid #b77a50;
+    border-radius: 4px 12px 12px 4px;
+    color: #493326;
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 2.2;
+    letter-spacing: 0.035em;
+}
 
+#feedback .corrected-japanese {
+    background: #edf0e5;
+    border-left-color: #78836a;
+}
+
+#feedback h2,
+#feedback h3,
+#feedback h4,
+.feedback h3,
+.feedback h4 {
+    margin: 20px 0 10px;
+    color: #78543d;
+    font-family: "Playfair Display", "Noto Serif JP", serif;
+    line-height: 1.5;
+}
+
+#feedback h3,
+.feedback h3 {
+    font-size: 24px;
+}
+
+#feedback strong,
+.feedback strong {
+    color: #a45f3e;
+    font-weight: 700;
+}
+
+#feedback ul,
+#feedback ol {
+    padding-left: 24px;
+}
+
+#feedback li {
+    padding: 4px 0;
+}
+
+#feedback ruby,
+.feedback ruby {
+    ruby-position: over;
+}
+
+#feedback rt,
+.feedback rt {
+    color: #b9674b;
+    font-family: "Noto Serif JP", serif;
+    font-size: 10px;
+}
+
+/* Furigana elements */
 .kanji-word {
     cursor: pointer;
     border-radius: 3px;
@@ -574,184 +638,7 @@ button {
     visibility: visible;
 }
 
-/* Footer */
-
-.footer {
-    padding: 62px 0 27px;
-    text-align: center;
-}
-
-.footer-flower {
-    margin-bottom: 10px;
-    color: var(--caramel);
-    font-size: 27px;
-}
-
-.footer p {
-    margin: 0;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 17px;
-}
-
-.footer > span {
-    display: block;
-    margin-top: 5px;
-    color: var(--muted);
-    font-size: 11px;
-}
-
-.footer-bottom {
-    margin-top: 28px;
-    padding-top: 17px;
-    border-top: 1px solid rgba(120, 84, 61, 0.14);
-    color: #aa9785;
-    font-size: 9px;
-    letter-spacing: 1.8px;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-    .container {
-        width: min(100% - 30px, 480px);
-    }
-
-    .topbar {
-        min-height: 73px;
-    }
-
-    /* .brand {
-        gap: 7px;
-        font-size: 11px;
-        letter-spacing: 1.3px;
-    }
-
-    .brand-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 17px;
-    } */
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-/*  */
-
-.brand-logo {
-    width: 10px;
-    height: 10px;
-    /* object-fit: contain;
-    display: block;
-    flex-shrink: 0; */
-}
-    .open-status {
-        gap: 6px;
-        font-size: 10px;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding-top: 40px;
-    }
-
-    h1 {
-        font-size: clamp(39px, 11vw, 53px);
-    }
-
-    .hero-copy > p {
-        max-width: 360px;
-    }
-
-    .hero-art {
-        min-height: 235px;
-        border-radius: 20px;
-    }
-
-    .coffee-cup {
-        transform: scale(0.87);
-    }
-
-    .sun-circle {
-        width: 165px;
-        height: 165px;
-    }
-
-    .daily-note {
-        margin: 20px 0 40px;
-        padding: 14px;
-        gap: 11px;
-    }
-
-    .note-decoration {
-        display: none;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-    }
-
-    .section-heading h2 {
-        font-size: 24px;
-    }
-
-    .little-stamp {
-        font-size: 8px;
-    }
-
-    .input-card,
-    .practice-card {
-        padding: 21px 17px;
-        border-radius: 14px;
-    }
-
-    .card-topline {
-        gap: 11px;
-    }
-
-    .card-topline h3 {
-        font-size: 14px;
-    }
-
-    .situation {
-        padding: 15px;
-    }
-
-    .footer {
-        padding-top: 45px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-
-/* ======================================
-   BUNPO BITES — THREE-PAGE EXPERIENCE
-   Append to the end of style.css
-   ====================================== */
-
+/* Multi-Page Experience */
 .app-page {
     display: none;
     min-height: 360px;
@@ -775,29 +662,22 @@ button {
 }
 
 .page-heading {
-    max-width: 680px;
+    max-width: 850px;
     margin: 24px auto 30px;
     text-align: center;
 }
 
 .page-heading h1 {
     margin: 13px 0;
-    font-size: clamp(32px, 5vw, 48px);
+    font-size: clamp(42px, 4.5vw, 60px);
 }
 
 .page-heading > p {
-    max-width: 500px;
+    max-width: 650px;
     margin: 0 auto;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.9;
-}
-
-/* Welcome page */
-
-.start-button {
-    max-width: 290px;
-    margin: 25px 0 20px;
 }
 
 .welcome-extra {
@@ -811,14 +691,14 @@ button {
 
 .welcome-extra h2 {
     margin: 8px 0;
-    font-size: 26px;
+    font-size: 32px;
 }
 
 .welcome-extra > p {
     max-width: 470px;
     margin: 0 auto;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .mini-perks {
@@ -834,15 +714,14 @@ button {
     align-items: center;
     gap: 7px;
     color: var(--mocha);
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .mini-perks span {
     font-size: 11px;
 }
 
-/* Practice menu */
-
+/* Practice Menu */
 .menu-decoration {
     display: flex;
     align-items: center;
@@ -868,13 +747,13 @@ button {
 
 .menu-decoration strong {
     display: block;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .menu-decoration p {
     margin: 2px 0 0;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .menu-flower {
@@ -895,38 +774,6 @@ button {
 
 .menu-footer-note p {
     margin: 0;
-}
-
-/* Conversation page */
-
-.conversation-header h2 {
-    font-size: 26px;
-}
-
-.situation {
-    font-family: "Noto Serif JP", "Yu Mincho", serif;
-    font-size: 16px;
-    line-height: 2.15;
-    letter-spacing: 0.025em;
-}
-
-.japanese-output {
-    font-feature-settings: "palt";
-    overflow-wrap: anywhere;
-    word-break: normal;
-}
-
-.japanese-input {
-    font-family: "Noto Serif JP", "Yu Mincho", serif;
-    font-size: 16px;
-    line-height: 2;
-    letter-spacing: 0.02em;
-}
-
-.japanese-input::placeholder {
-    font-family: "Noto Serif JP", serif;
-    font-size: 13px;
-    line-height: 2;
 }
 
 .reading-tip {
@@ -957,63 +804,11 @@ button {
 
 .reading-tip p span {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.7;
 }
 
-/* Better Japanese text selection */
-
-.japanese-output ::selection,
-.feedback ::selection {
-    background: #dfc4a7;
-    color: var(--coffee-dark);
-}
-
-/* Feedback typography */
-
-.feedback {
-    font-family: "DM Sans", "Noto Serif JP", sans-serif;
-    font-size: 13px;
-    line-height: 2;
-}
-
-.feedback h3,
-.feedback h4 {
-    margin: 0 0 8px;
-    color: var(--coffee);
-    font-family: "Playfair Display", "Noto Serif JP", serif;
-}
-
-.feedback strong {
-    color: #805336;
-}
-
-.feedback ruby {
-    ruby-position: over;
-}
-
-.feedback rt {
-    color: var(--terracotta);
-    font-family: "Noto Serif JP", serif;
-    font-size: 0.65em;
-}
-
-.feedback .japanese-text,
-.feedback .corrected-japanese,
-.feedback .example-japanese {
-    display: block;
-    margin: 10px 0;
-    padding: 12px 14px;
-    border-left: 3px solid var(--caramel);
-    border-radius: 0 9px 9px 0;
-    background: #fffaf2;
-    font-family: "Noto Serif JP", serif;
-    font-size: 16px;
-    line-height: 2;
-}
-
-/* Empty conversation state */
-
+/* Empty State */
 .empty-state {
     max-width: 500px;
     margin: 35px auto;
@@ -1052,8 +847,7 @@ button {
     margin: 0 auto;
 }
 
-/* Three-step navigation */
-
+/* Page Navigation */
 .page-navigation {
     position: relative;
     display: flex;
@@ -1071,15 +865,12 @@ button {
     flex-shrink: 0;
     place-items: center;
     cursor: pointer;
-    transition:
-        background 180ms ease,
-        color 180ms ease,
-        transform 180ms ease;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .nav-arrow {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border: 1px solid #e2d1bd;
     border-radius: 50%;
     background: var(--paper);
@@ -1098,13 +889,13 @@ button {
 }
 
 .page-dot {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border: 1px solid #e1cfba;
     border-radius: 50%;
     background: #fffaf2;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
 }
 
@@ -1140,30 +931,192 @@ button {
 }
 
 /* Footer */
-
 .footer {
+    padding: 62px 0 27px;
     margin-top: 10px;
+    text-align: center;
 }
 
-/* Mobile refinements */
+.footer-flower {
+    margin-bottom: 10px;
+    color: var(--caramel);
+    font-size: 27px;
+}
+
+.footer p {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+}
+
+.footer > span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-bottom {
+    margin-top: 28px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(120, 84, 61, 0.14);
+    color: #aa9785;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+}
+
+/* Animations */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (max-width: 600px)
+   ========================================= */
 
 @media (max-width: 600px) {
-    .app-page {
-        min-height: 300px;
-        padding-top: 15px;
+    .container {
+        width: calc(100% - 30px);
     }
 
-    .page-heading {
-        margin: 24px auto;
+    .topbar {
+        min-height: 73px;
+    }
+
+    .topbar .brand {
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .topbar .brand-logo {
+        width: 22px !important;
+        height: 22px !important;
+        max-width: 22px;
+    }
+
+    .open-status {
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 20px;
+        padding-top: 40px;
+    }
+
+    h1 {
+        font-size: clamp(39px, 10vw, 54px);
+    }
+
+    .hero-copy > p,
+    .page-heading > p {
+        font-size: 15px;
+    }
+
+    .hero-art {
+        min-height: 235px;
+    }
+
+    .hero-art .hero-image {
+        max-width: 340px;
+        max-height: 340px;
     }
 
     .page-heading h1 {
         font-size: 34px;
-        letter-spacing: -0.7px;
     }
 
-    .page-heading > p {
-        font-size: 13px;
+    .daily-note {
+        margin: 20px 0 40px;
+        padding: 14px;
+        gap: 11px;
+    }
+
+    .note-decoration {
+        display: none;
+    }
+
+    .workspace {
+        width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2,
+    .conversation-header h2 {
+        font-size: 25px;
+    }
+
+    .little-stamp {
+        font-size: 8px;
+    }
+
+    .input-card,
+    .practice-card {
+        padding: 22px 17px;
+        border-radius: 14px;
+    }
+
+    .card-topline {
+        gap: 11px;
+    }
+
+    .card-topline h3 {
+        font-size: 14px;
+    }
+
+    textarea,
+    .japanese-input {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .situation {
+        font-size: 17px;
+        padding: 16px;
+    }
+
+    #feedback,
+    .feedback {
+        padding: 17px;
+        font-size: 14px;
+    }
+
+    #feedback .japanese-text,
+    #feedback .corrected-japanese,
+    #feedback .example-japanese,
+    .feedback .japanese-text,
+    .feedback .corrected-japanese,
+    .feedback .example-japanese {
+        font-size: 18px;
+        padding: 13px;
+    }
+
+    #feedback h3,
+    .feedback h3 {
+        font-size: 19px;
     }
 
     .welcome-extra {
@@ -1176,11 +1129,6 @@ button {
 
     .menu-decoration {
         padding: 12px;
-    }
-
-    .situation {
-        font-size: 15px;
-        line-height: 2.1;
     }
 
     .page-navigation {
@@ -1204,433 +1152,8 @@ button {
     .nav-line {
         width: clamp(7px, 3vw, 20px);
     }
-}
 
-/* =================================
-   BUNPO BITES — FEEDBACK TYPOGRAPHY
-   ================================= */
-
-/* Main feedback container */
-#feedback {
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    line-height: 2;
-    color: #493326;
-    padding: 24px;
-    margin-top: 22px;
-    background: #fff8ed;
-    border: 1px solid #e8d4bc;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(73, 51, 38, 0.06);
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-}
-
-/* Japanese sentences inside feedback */
-#feedback .japanese-text,
-#feedback .corrected-japanese,
-#feedback .example-japanese {
-    display: block;
-    margin: 12px 0;
-    padding: 16px 18px;
-    background: #f3e7d7;
-    border-left: 4px solid #b77a50;
-    border-radius: 4px 12px 12px 4px;
-    color: #493326;
-    font-family: "Noto Serif JP", "Yu Mincho", serif;
-    font-size: 19px;
-    font-weight: 500;
-    line-height: 2.1;
-    letter-spacing: 0.035em;
-}
-
-/* Corrected Japanese */
-#feedback .corrected-japanese {
-    background: #edf0e5;
-    border-left-color: #78836a;
-}
-
-/* Headings */
-#feedback h2,
-#feedback h3,
-#feedback h4 {
-    margin: 20px 0 10px;
-    color: #78543d;
-    font-family: "Playfair Display", "Noto Serif JP", serif;
-    line-height: 1.5;
-}
-
-#feedback h3 {
-    font-size: 21px;
-}
-
-/* Emphasis */
-#feedback strong {
-    color: #a45f3e;
-    font-weight: 700;
-}
-
-/* Lists */
-#feedback ul,
-#feedback ol {
-    padding-left: 24px;
-}
-
-#feedback li {
-    padding: 4px 0;
-}
-
-/* Japanese readings */
-#feedback ruby {
-    ruby-position: over;
-}
-
-#feedback rt {
-    color: #b9674b;
-    font-family: "Noto Serif JP", serif;
-    font-size: 10px;
-}
-
-/* Smaller screens */
-@media (max-width: 600px) {
-    #feedback {
-        padding: 17px;
-        font-size: 13px;
-    }
-
-    #feedback .japanese-text,
-    #feedback .corrected-japanese,
-    #feedback .example-japanese {
-        padding: 13px;
-        font-size: 17px;
-        line-height: 2;
-    }
-
-    #feedback h3 {
-        font-size: 19px;
-    }
-}
-
-
-/* =========================================
-   BUNPO BITES — LARGER, FULL-SIZE DISPLAY
-   Add at the very end of style.css
-   ========================================= */
-
-/* Use more of the available screen */
-.container {
-    width: min(100% - 64px, 1200px);
-}
-
-/* Make the navigation more spacious */
-.topbar {
-    min-height: 100px;
-}
-
-.brand {
-    font-size: 16px;
-}
-
-.open-status {
-    font-size: 14px;
-}
-
-/* Larger hero section */
-.hero {
-    min-height: 460px;
-    gap: 45px;
-}
-
-h1 {
-    font-size: clamp(48px, 5vw, 72px);
-}
-
-.hero-copy > p {
-    max-width: 540px;
-    font-size: 17px;
-}
-
-.eyebrow {
-    font-size: 12px;
-}
-
-.hero-tags span {
-    font-size: 13px;
-    padding: 8px 13px;
-}
-
-/* Larger practice area */
-.workspace {
-    max-width: 900px;
-}
-
-.page-heading {
-    max-width: 850px;
-}
-
-.page-heading h1 {
-    font-size: clamp(42px, 4.5vw, 60px);
-}
-
-.page-heading > p {
-    max-width: 650px;
-    font-size: 17px;
-}
-
-.section-heading h2,
-.conversation-header h2 {
-    font-size: 32px;
-}
-
-.card-topline h3 {
-    font-size: 19px;
-}
-
-.card-topline p {
-    font-size: 15px;
-}
-
-/* Increase input readability */
-label {
-    font-size: 13px;
-}
-
-textarea,
-.japanese-input {
-    font-size: 18px;
-    line-height: 2;
-    padding: 18px;
-    min-height: 150px;
-}
-
-textarea::placeholder {
-    font-size: 15px;
-}
-
-.input-hint {
-    font-size: 14px;
-}
-
-/* Larger buttons */
-.primary-button {
-    min-height: 60px;
-    font-size: 16px;
-    padding: 16px 22px;
-}
-
-.secondary-button {
-    font-size: 15px;
-    padding: 15px 18px;
-}
-
-/* Larger conversation and feedback cards */
-.input-card,
-.practice-card {
-    padding: 38px;
-    border-radius: 20px;
-}
-
-.situation {
-    font-size: 19px;
-    line-height: 2.2;
-    padding: 24px;
-}
-
-#feedback {
-    padding: 30px;
-    font-size: 16px;
-    line-height: 2.1;
-}
-
-#feedback .japanese-text,
-#feedback .corrected-japanese,
-#feedback .example-japanese {
-    font-size: 22px;
-    padding: 20px;
-    line-height: 2.2;
-}
-
-#feedback h3 {
-    font-size: 24px;
-}
-
-.reading-tip p span {
-    font-size: 14px;
-}
-
-/* Larger welcome and menu sections */
-.welcome-extra h2 {
-    font-size: 32px;
-}
-
-.welcome-extra > p,
-.mini-perks > div {
-    font-size: 15px;
-}
-
-.menu-decoration strong {
-    font-size: 16px;
-}
-
-.menu-decoration p {
-    font-size: 14px;
-}
-
-/* Larger page navigation */
-.page-dot {
-    width: 50px;
-    height: 50px;
-    font-size: 15px;
-}
-
-.nav-arrow {
-    width: 44px;
-    height: 44px;
-}
-
-/* Footer */
-.footer p {
-    font-size: 21px;
-}
-
-.footer > span {
-    font-size: 13px;
-}
-
-
-/* Prevent images from overflowing their containers */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Hero image */
-.hero-art .hero-image {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 460px;
-    max-height: 460px;
-    object-fit: contain;
-}
-
-/* Navbar logo */
-.topbar .brand-logo {
-    width: 26px !important;
-    height: 26px !important;
-    max-width: 26px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-    .hero-art .hero-image {
-        max-width: 340px;
-        max-height: 340px;
-    }
-
-    .topbar .brand-logo {
-        width: 22px !important;
-        height: 22px !important;
-        max-width: 22px;
-    }
-}
-
-
-/* Keep the layout comfortable on phones */
-@media (max-width: 600px) {
-    .container {
-        width: calc(100% - 30px);
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        gap: 20px;
-    }
-
-    h1 {
-        font-size: clamp(40px, 10vw, 54px);
-    }
-
-    .page-heading h1 {
-        font-size: 36px;
-    }
-
-    .page-heading > p,
-    .hero-copy > p {
-        font-size: 15px;
-    }
-
-    .workspace {
-        width: 100%;
-    }
-
-    .input-card,
-    .practice-card {
-        padding: 22px 17px;
-    }
-
-    .section-heading h2,
-    .conversation-header h2 {
-        font-size: 25px;
-    }
-
-    textarea,
-    .japanese-input {
-        font-size: 17px;
-        padding: 14px;
-    }
-
-    .situation {
-        font-size: 17px;
-        padding: 16px;
-    }
-
-    #feedback {
-        padding: 17px;
-        font-size: 14px;
-    }
-
-    #feedback .japanese-text,
-    #feedback .corrected-japanese,
-    #feedback .example-japanese {
-        font-size: 18px;
-        padding: 13px;
-    }
-
-    .page-navigation {
-        gap: 8px;
-    }
-}
-
-/* Fix navbar logo size on all screen sizes */
-.topbar .brand-logo {
-    width: 26px !important;
-    height: 26px !important;
-    max-width: 26px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-}
-
-/* Keep the brand name neatly aligned */
-.topbar .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    line-height: 1.2;
-}
-
-/* Slightly smaller on phones */
-@media (max-width: 600px) {
-    .topbar .brand-logo {
-        width: 22px !important;
-        height: 22px !important;
-    }
-
-    .topbar .brand {
-        gap: 6px;
-        font-size: 12px;
+    .footer {
+        padding-top: 45px;
     }
 }

@@ -161,11 +161,31 @@ h1 span {
     font-style: italic;
 }
 
-.hero-art .hero-image {
+/* .hero-art .hero-image {
     display: block;
     width: 555px !important;
     height: 555px !important;
     max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+} */
+
+.hero-art {
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-art .hero-image {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 460px;
+    max-height: 460px;
     object-fit: contain;
     margin: 0 auto;
     position: relative;
@@ -1476,6 +1496,45 @@ textarea::placeholder {
 .footer > span {
     font-size: 13px;
 }
+
+
+/* Prevent images from overflowing their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero image */
+.hero-art .hero-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 460px;
+    max-height: 460px;
+    object-fit: contain;
+}
+
+/* Navbar logo */
+.topbar .brand-logo {
+    width: 26px !important;
+    height: 26px !important;
+    max-width: 26px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .hero-art .hero-image {
+        max-width: 340px;
+        max-height: 340px;
+    }
+
+    .topbar .brand-logo {
+        width: 22px !important;
+        height: 22px !important;
+        max-width: 22px;
+    }
+}
+
 
 /* Keep the layout comfortable on phones */
 @media (max-width: 600px) {

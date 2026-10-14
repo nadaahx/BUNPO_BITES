@@ -100,10 +100,11 @@ img {
 } 
 
 .brand-logo {
-    width: 26px !important;
-    height: 26px !important;
-    max-width: 26px;
+    width: 10px !important;
+    height: 10px !important;
+    max-width: 10px;
     object-fit: contain;
+    display: block;
     flex-shrink: 0;
 }
 
@@ -179,10 +180,10 @@ h1 span {
 }
 
 .hero-art .hero-image {
-    width: 100% !important;
+    width: auto !important;
     height: auto !important;
-    max-width: 460px;
-    max-height: 460px;
+    max-width: 250px;
+    max-height: 250px;
     object-fit: contain;
     margin: 0 auto;
     position: relative;
